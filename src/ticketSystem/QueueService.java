@@ -28,7 +28,7 @@ public class QueueService {
 		}
 		return user;
 	}
-
+	
 	public void printCurrentQueue(String eventId) {
 		Event event = TicketSystem.getEventById(eventId);
 		if (event != null) {

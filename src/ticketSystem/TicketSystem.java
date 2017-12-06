@@ -35,6 +35,14 @@ public class TicketSystem {
 		events.put(event.getId(), event);
 	}
 	
+	public void filterEventsOnName(String name){
+		events.values().stream().filter(e -> e.getName().equals(name)).forEach(System.out::println);
+	}
+	
+	public void filterFullEvents(){
+		events.values().stream().filter(e -> e.isFull()).forEach(System.out::println);
+	}
+	
 	public static User getUserById(String id){
 		return users.get(id);
 	}
