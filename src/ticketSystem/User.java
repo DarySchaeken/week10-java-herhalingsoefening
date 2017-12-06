@@ -8,6 +8,8 @@ public class User {
 	private String firstName;
 	private LocalDate birthDate;
 	private String id;
+	private boolean premium;
+
 	private static int idNumberGenerator = 1;
 	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
@@ -46,6 +48,14 @@ public class User {
 
 	public void setBirthDate(String birthDate) {
 		this.birthDate = LocalDate.parse(birthDate, DATE_FORMAT);
+	}
+	
+	public boolean isPremium() {
+		return premium;
+	}
+
+	public void setPremium(boolean premium) {
+		this.premium = premium;
 	}
 
 	public String getId() {
@@ -102,6 +112,16 @@ public class User {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	public int compareTo(User user){
+		if(this.isPremium() == user.isPremium()){
+			return 0;
+		} else if( this.isPremium() == true){
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
 }

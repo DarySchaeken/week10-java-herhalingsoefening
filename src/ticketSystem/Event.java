@@ -44,7 +44,7 @@ public class Event {
 	public void addTicketHolder(User tickerHolder){
 		ticketHolders.add(tickerHolder);
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -95,6 +95,10 @@ public class Event {
 
 	public void setVenue(Venue venue) {
 		this.venue = venue;
+	}
+	
+	public boolean isFull(){
+		return ticketHolders.size() == venue.getCapacity();
 	}
 	
 	private String generateId(){
