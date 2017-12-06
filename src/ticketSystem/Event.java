@@ -34,8 +34,9 @@ public class Event {
 		setVenue(venue);
 	}
 	
-	public Event(String id, String name, String eventDate, String startTime, String description, double price, Venue venue){
-		this(name, eventDate, startTime, description, price, venue);
+	public Event(String id, String name, String eventDate, String startTime, String description, double price, String venueID){
+		this(name, eventDate, startTime, description, price);
+		venue = TicketSystem.getVenueById(venueID);
 		this.id = id;
 	}
 	

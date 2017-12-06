@@ -2,8 +2,6 @@ package ticketSystemTest;
 
 import static org.junit.Assert.*;
 
-import java.time.LocalDate;
-
 import org.junit.Before;
 import org.junit.Test;
 import ticketSystem.User;
@@ -26,8 +24,8 @@ public class UserTest {
 	
 	@Test
 	public void dateInputTest(){
-		assertEquals(LocalDate.of(2001, 01, 01), test.getBirthDate());
-		assertEquals(LocalDate.of(2002, 02, 02), test2.getBirthDate());
+		assertEquals("01/01/2001", test.getBirthDate());
+		assertEquals("02/02/2002", test2.getBirthDate());
 	}
 
 }
