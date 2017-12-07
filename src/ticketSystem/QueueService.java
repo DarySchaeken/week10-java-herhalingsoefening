@@ -28,6 +28,10 @@ public class QueueService {
 		}
 		return user;
 	}
+	
+	public void removeQueue(String eventId){
+		queueCollection.remove(TicketSystem.getEventById(eventId));
+	}
 
 	public void printCurrentQueue(String eventId) {
 		Event event = TicketSystem.getEventById(eventId);

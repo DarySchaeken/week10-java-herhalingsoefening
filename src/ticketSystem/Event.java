@@ -42,7 +42,9 @@ public class Event {
 	
 	
 	public void addTicketHolder(User tickerHolder){
-		ticketHolders.add(tickerHolder);
+		if(!isFull()){
+			ticketHolders.add(tickerHolder);
+		}
 	}
 	
 	public String getName() {

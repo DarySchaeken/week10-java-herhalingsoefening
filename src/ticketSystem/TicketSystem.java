@@ -61,6 +61,17 @@ public class TicketSystem {
 						&& e.getEventDate().isBefore(LocalDate.now().plusDays(7)))
 				.map(e -> e.getVenue().getId()).forEach(System.out::println);
 	}
+	
+	public void assignTickets(String eventId, int amount){
+		for(int i = 0; i < amount; i++){
+			User user = queueService.getNextInLine(eventId);
+			if(user != null){
+				events.get(eventId).addTicketHolder(user);
+			} else {
+				queueService.removeQueue(eventId);
+			}
+		}
+	}
 
 	public static User getUserById(String id) {
 		return users.get(id);
