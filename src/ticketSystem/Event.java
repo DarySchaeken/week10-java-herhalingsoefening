@@ -97,6 +97,10 @@ public class Event {
 		this.venue = venue;
 	}
 	
+	public ArrayList<User> getTicketHolders() {
+		return ticketHolders;
+	}
+
 	public boolean isFull(){
 		return ticketHolders.size() == venue.getCapacity();
 	}

@@ -28,7 +28,7 @@ public class QueueService {
 		}
 		return user;
 	}
-	
+
 	public void printCurrentQueue(String eventId) {
 		Event event = TicketSystem.getEventById(eventId);
 		if (event != null) {
@@ -44,6 +44,11 @@ public class QueueService {
 		if (event != null) {
 			System.out.printf("%s - %d%n", event.getId(), queueCollection.get(event).size());
 		}
+	}
+
+	public void filterQueuesOnUser(User user) {
+		queueCollection.entrySet().stream().filter(e -> e.getValue().contains(user)).map(e -> e.getKey().getId())
+				.forEach(System.out::println);
 	}
 
 }
