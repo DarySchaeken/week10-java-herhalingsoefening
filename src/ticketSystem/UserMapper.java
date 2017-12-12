@@ -8,7 +8,7 @@ public class UserMapper implements Mapper<User> {
 		birthDate.insert(4, '/');
 		birthDate.insert(2, '/');
 		
-		return new User(dataInput[0], dataInput[1], dataInput[2], birthDate.toString());
+		return new User(dataInput[0], dataInput[2], dataInput[1], birthDate.toString());
 	}
 	
 }
