@@ -44,6 +44,7 @@ public class Event {
 	public void addTicketHolder(User tickerHolder){
 		if(!isFull()){
 			ticketHolders.add(tickerHolder);
+			TicketWriter.writeTicket(tickerHolder, this);
 		}
 	}
 	
