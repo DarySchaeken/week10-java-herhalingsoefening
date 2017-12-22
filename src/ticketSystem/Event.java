@@ -109,12 +109,12 @@ public class Event {
 	}
 	
 	private String generateId(){
-		StringBuilder returnString = new StringBuilder(getName().substring(0, 3).toUpperCase() + "-" + idNumberGenerator);
+		/*StringBuilder returnString = new StringBuilder(getName().substring(0, 3).toUpperCase() + "-" + idNumberGenerator);
 		while(returnString.length() < 9){
 			returnString.insert(4, '0');
 		}
-		idNumberGenerator++;
-		return returnString.toString();
+		idNumberGenerator++;*/
+		return String.format("%s-%06d", getName().substring(0, 3).toUpperCase(), idNumberGenerator++);
 	}
 	
 

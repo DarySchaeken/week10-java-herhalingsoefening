@@ -63,12 +63,12 @@ public class User {
 	}
 
 	private static String generateId(){
-		StringBuilder returnString = new StringBuilder("U-" + idNumberGenerator);
+		/*StringBuilder returnString = new StringBuilder("U-" + idNumberGenerator);
 		while(returnString.length() < 8){
 			returnString.insert(2, '0');
 		}
-		idNumberGenerator++;
-		return  returnString.toString();
+		idNumberGenerator++;*/
+		return  String.format("U-%06d", idNumberGenerator++);
 	}
 
 	@Override

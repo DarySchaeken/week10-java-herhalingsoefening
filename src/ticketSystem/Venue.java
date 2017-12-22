@@ -77,12 +77,12 @@ public class Venue {
 	}
 
 	private String generateId(){
-		StringBuilder returnString = new StringBuilder("V-" + idGeneratorNumber);
+		/*StringBuilder returnString = new StringBuilder("V-" + idGeneratorNumber);
 		while(returnString.length() < 6){
 			returnString.insert(2, '0');
 		}
-		idGeneratorNumber++;
-		return returnString.toString();
+		idGeneratorNumber++;*/
+		return String.format("V-%06d", idGeneratorNumber++);
 	}
 
 }
