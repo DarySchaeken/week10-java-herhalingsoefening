@@ -118,9 +118,9 @@ public class User {
 		if(this.isPremium() == user.isPremium()){
 			return 0;
 		} else if( this.isPremium() == true){
-			return 1;
-		} else {
 			return -1;
+		} else {
+			return 1;
 		}
 	}
 

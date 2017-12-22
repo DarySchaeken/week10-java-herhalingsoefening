@@ -82,7 +82,7 @@ public class Venue {
 			returnString.insert(2, '0');
 		}
 		idGeneratorNumber++;*/
-		return String.format("V-%06d", idGeneratorNumber++);
+		return String.format("V-%05d", idGeneratorNumber++);
 	}
 
 }

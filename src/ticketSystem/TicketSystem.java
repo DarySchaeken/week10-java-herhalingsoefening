@@ -29,8 +29,10 @@ public class TicketSystem {
 		queueService.addToQueue(event.getId(), user.getId());
 	}
 
-	public void viewNext(String eventId) {
-		System.out.println(queueService.getNextInLine(eventId));
+	public User viewNext(String eventId) {
+		User user = queueService.getNextInLine(eventId);
+		System.out.println(user);
+		return user;
 	}
 
 	public void addUser(User user) {

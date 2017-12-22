@@ -17,7 +17,7 @@ public class QueueService {
 		if (event != null && !queueCollection.containsKey(event)) {
 			queueCollection.put(event, new TreeSet<User>((u1, u2) -> u1.compareTo(u2)));
 		}
-		queueCollection.get(eventId).add(TicketSystem.getUserById(userId));
+		queueCollection.get(event).add(TicketSystem.getUserById(userId));
 	}
 
 	public User getNextInLine(String eventId) {
