@@ -117,5 +117,9 @@ public class Event {
 		return String.format("%s-%06d", getName().substring(0, 3).toUpperCase(), idNumberGenerator++);
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t%s", id, name, venue);
+	}
 
 }

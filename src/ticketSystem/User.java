@@ -124,4 +124,9 @@ public class User {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s\t%s %s", id, firstName, name);
+	}
+
 }

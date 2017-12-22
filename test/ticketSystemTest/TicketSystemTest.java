@@ -36,5 +36,19 @@ public class TicketSystemTest {
 		ticketSystem.requestTicket(TicketSystem.getEventById("RUN-00001"), TicketSystem.getUserById("U-000005"));
 		assertEquals(premiumUser, ticketSystem.viewNext("RUN-00001"));
 	}
+	
+	@Test
+	public void multiplePremiumQueueTest(){
+		User premiumUser1 = new User("Dary", "Schaeken", "08/08/1996");
+		premiumUser1.setPremium(true);
+		ticketSystem.addUser(premiumUser1);
+		User premiumUser2 = new User("Kathy", "Janssens", "24/08/1996");
+		premiumUser2.setPremium(true);
+		ticketSystem.addUser(premiumUser2);
+		ticketSystem.requestTicket(TicketSystem.getEventById("RUN-00001"), TicketSystem.getUserById("U-000001"));
+		ticketSystem.requestTicket(TicketSystem.getEventById("RUN-00001"), TicketSystem.getUserById(premiumUser1.getId()));
+		ticketSystem.requestTicket(TicketSystem.getEventById("RUN-00001"), TicketSystem.getUserById(premiumUser2.getId()));
+		assertEquals(premiumUser1, ticketSystem.viewNext("RUN-00001"));
+	}
 
 }

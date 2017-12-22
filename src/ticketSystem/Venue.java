@@ -84,5 +84,11 @@ public class Venue {
 		idGeneratorNumber++;*/
 		return String.format("V-%05d", idGeneratorNumber++);
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s\t%s", id, name);
+	}
+
 
 }
