@@ -95,6 +95,10 @@ public class TicketSystem {
 	public static Venue getVenueById(String id) {
 		return venues.get(id);
 	}
+	
+	public void printCurrentQueue(String eventId){
+		queueService.printCurrentQueue(eventId);
+	}
 
 	private void readData() {
 		readUsers();

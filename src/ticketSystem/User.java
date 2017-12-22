@@ -116,7 +116,7 @@ public class User {
 	
 	public int compareTo(User user){
 		if(this.isPremium() == user.isPremium()){
-			return 0;
+			return 1;
 		} else if( this.isPremium() == true){
 			return -1;
 		} else {
